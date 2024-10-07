@@ -1,0 +1,54 @@
+<div class="bod">
+<div class="container">
+    <h1>Simple Interest Calculator</h1>
+    <div class="form-group">
+      <label for="principal">Principal Amount ($):</label>
+      <input type="number" (input)="updatePrincipal($event)" id="principal" />
+    </div>
+    <div class="form-group">
+      <label for="rate">Interest Rate (%):</label>
+      <input type="number" (input)="updateRate($event)" id="rate" step="0.01" />
+    </div>
+    <div class="form-group">
+      <label for="time">Time (month):</label>
+      <input type="number" (input)="updateTime($event)" id="time" step="0.01" />
+    </div>
+    <button (click)="calculateInterest()">Calculate</button>
+    
+   
+  </div>
+  <div class="oll" *ngIf="interest > 0">
+    
+   
+   
+    <table>
+      <thead>
+        <tr>
+          <th>Месяц</th>
+          <th>Дата платежа</th>
+          <th>ежемесячный платеж</th>
+          <th>Сумма</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of monthlyBreakdown">
+          <td>{{ item.month }}</td>
+          <td>{{ item.date }}</td>
+          <td>{{ item.monthlyPayment.toFixed(2) }}</td>
+          <td>{{ item.amount.toFixed(2) }}</td>
+        </tr>
+        <tr class="thead">
+            <td>Проценты</td>
+            <td>${{ interest.toFixed(2) }}</td>
+            <td>Общая сумма</td>
+            <td>${{ totalAmount.toFixed(2) }}</td>
+            
+          </tr>
+        
+      </tbody>
+      
+    </table>
+  </div>
+</div>
+
+  
