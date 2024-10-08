@@ -2,14 +2,15 @@
     max-width: 400px;
     margin: auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
+    box-shadow: 1px 2px 3px #000000;
     border-radius: 8px;
     background-color: #f9f9f9;
-
+margin-top: 100px;
   }
   .body{
     height: 100vh;
-    padding-top: 100px;
+    padding-top:80px;
   }
   
 
